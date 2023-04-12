@@ -4,35 +4,35 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "estudiantes")
-public class Estudiante {
+@Table(name = "UnidadMedida")
+public class UnidadMedida {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
-    @NotNull(message = "El nombre del producto no puede ser nulo")
+    @NotNull(message = "El nombre de la unidad de medida no puede ser nulo")
     private String nombre;
 
     @Column
-    @NotNull(message = "La edad no puede ser nulo")
-    private String edad;
+    @NotNull(message = "El codigo no puede ser nulo")
+    private String codigo;
 
-    public Estudiante() {
+    public UnidadMedida() {
     }
 
-    public Estudiante(Long id, String nombre, String edad) 
+    public UnidadMedida(Long id, String nombre, String codigo) 
     {
         this.id = id;
         this.nombre = nombre;
-        this.edad = edad;
+        this.codigo = codigo;
     }
 
-    public Estudiante(String nombre, String edad)
+    public UnidadMedida(String nombre, String codigo)
     {
         this.nombre = nombre;
-        this.edad = edad;
+        this.codigo = codigo;
     }
 
     public Long getId() 
@@ -55,13 +55,14 @@ public class Estudiante {
         this.nombre = nombre;
     }
 
-    public String getEdad() 
+    public String getCodigo() 
     {
-        return edad;
+        return codigo;
     }
 
-    public void setEdad(String edad) 
+    public void setCodigo(String codigo) 
     {
-        this.edad = edad;
+        this.codigo = codigo;
     }
 }
+
