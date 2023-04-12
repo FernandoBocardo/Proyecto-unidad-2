@@ -4,7 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "Inventario")
+@Table(name = "inventario")
 public class Inventario {
     
     @Id
@@ -12,7 +12,7 @@ public class Inventario {
     private Long id;
     
     @ManyToOne()
-    @JoinColumn(name = "idProducto", nullable = false)
+    @JoinColumn(name = "idProducto", referencedColumnName = "id")
     private Producto idProducto;
     
     @Column

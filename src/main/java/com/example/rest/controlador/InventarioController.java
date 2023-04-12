@@ -1,6 +1,7 @@
 package com.example.rest.controlador;
 
 import com.example.rest.entidad.Inventario;
+import com.example.rest.entidad.Producto;
 import com.example.rest.repositorio.IInventarioRepositorio;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -28,23 +29,10 @@ public class InventarioController {
         return ResponseEntity.status(HttpStatus.CREATED).body(inventario1);
     }
 
-    @GetMapping
-    public ResponseEntity<List<Inventario>> obtenerInventariosPorIdProducto(@RequestParam(value = "idProducto", required = false) Long idProducto) 
+    @GetMapping("/idProducto={idProducto}")
+    public List<Inventario> obtenerInventariosPorIdProducto(@PathVariable Long idProducto)
     {
-        List<Inventario> inventarios;
-        if (idProducto == null) 
-        {
-            inventarios = iInventarioRepositorio.findAll();
-        } 
-        else 
-        {
-            inventarios = iInventarioRepositorio.findByIdProductoContainingIgnoreCase(idProducto);
-        }
-        if (inventarios.isEmpty()) 
-        {
-            return ResponseEntity.notFound().build();
-        }
-        return ResponseEntity.ok(inventarios);
+        return iInventarioRepositorio.findByIdProducto(idProducto);
     }
 
     @GetMapping("/{id}")

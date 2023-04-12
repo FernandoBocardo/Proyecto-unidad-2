@@ -7,5 +7,5 @@ import java.util.List;
 
 @Repository
 public interface IInventarioRepositorio extends JpaRepository<Inventario,Long>{
-    List<Inventario> findByIdProductoContainingIgnoreCase(Long idProducto);
+    List<Inventario> findByIdProducto(Long idProducto);
 }
