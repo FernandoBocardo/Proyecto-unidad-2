@@ -47,12 +47,12 @@
 		</dependency>
 	 <dependency>
 	  <groupId>${project.groupId}</groupId>
-	  <artifactId>Productos</artifactId>
+	  <artifactId>Clientes</artifactId>
 	  <version>${project.version}</version>
 	 </dependency>
 	 <dependency>
 	  <groupId>${project.groupId}</groupId>
-	  <artifactId>Clientes</artifactId>
+	  <artifactId>Productos</artifactId>
 	  <version>${project.version}</version>
 	 </dependency>
 	</dependencies>
