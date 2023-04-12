@@ -1,7 +1,5 @@
 package com.example.rest.entidad;
 
-
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
